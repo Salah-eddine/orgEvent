@@ -38,29 +38,7 @@
                         </span>
                     @endif
                 </div>
-                <div class="form-group has-feedback {{ $errors->has('number') ? 'has-error' : '' }}">
-                    <input type="text" name="number" class="form-control" value="{{ old('number') }}"
-                           placeholder="number">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    @if ($errors->has('number'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('number') }}</strong>
-                        </span>
-                    @endif
-                </div>
-                <div class="form-group has-feedback {{ $errors->has('type') ? 'has-error' : '' }}">
-                    <select name="type"  style="    padding-right: 255px" multiple>
-                        <option value=""></option>
-                        <option value="Demande">Demande</option>
-                        <option value="Service">service</option>
-                    </select>
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    @if ($errors->has('type'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('type') }}</strong>
-                        </span>
-                    @endif
-                </div>
+               
                 <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
                     <input type="password" name="password" class="form-control"
                            placeholder="{{ trans('adminlte::adminlte.password') }}">

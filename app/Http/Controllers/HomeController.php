@@ -26,11 +26,8 @@ class HomeController extends Controller
     public function index(User $user )
     {
       //  $users= User::where('email', $user)->first();
-     if(Auth::user()->type == "Service") {
+
          return view('home');
-     }elseif(Auth::user()->type == "Demande"){
-         return view('service');
-     }
 
      //  dd($users);
 
