@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
-use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -23,16 +21,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(User $user )
+    public function index()
     {
-      //  $users= User::where('email', $user)->first();
-
-         return view('home');
-
-     //  dd($users);
-
-
+        return view('home');
     }
-
-    }
-
+}
