@@ -14,8 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('services','ServiceController');
+
+// Login for facebook
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');
+
 
 Auth::routes();
+// Route service
+
+Route::resource('/service','ServicesController');
+
+// Route Demande
+Route::resource('/demand','DemandsController');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

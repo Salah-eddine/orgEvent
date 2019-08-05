@@ -8,7 +8,14 @@
 
 @section('content')
 
-    <p><a href=""> Inscription demande</a></p>
-    <p><a href=""> Inscription service</a></p>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/demand" style="color:white !important;">  <button type="button" class="btn btn-block btn-primary btn-lg">Demande</button></a>
+            </div>
+            <div class="col-md-6">
+                <a href="/service" style="color:white !important;"> <button type="button" class="btn btn-block btn-primary btn-lg">Service</button></a>
+            </div>
+        </div>
+    </div>
 @stop

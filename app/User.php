@@ -6,6 +6,8 @@ use App\service;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Demande;
+use App\Service;
 
 class User extends Authenticatable
 {
@@ -17,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password'
+        'name', 'email', 'password', 'provider', 'provider_id'
     ];
 
     /**
@@ -37,8 +39,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function services()
+
+
+    public function demandes()
     {
-        return $this->belongsToMany('App\Service','service_user','user_id');
+        return $this->belongsToMany(Demande::class, 'demande_user', 'user_id', 'demande_id');
+    }
+
+    public function services(){
+        return $this->belongsToMany(Service::class, 'service_user', 'user_id', 'service_id');
+
     }
 }

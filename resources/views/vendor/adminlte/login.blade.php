@@ -20,6 +20,12 @@
                 {!! csrf_field() !!}
 
                 <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error' : '' }}">
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            <a href="{{url('/redirect')}}" class="btn btn-primary">Login with Facebook</a>
+                        </div>
+                    </div>
                     <input type="email" name="email" class="form-control" value="{{ old('email') }}"
                            placeholder="{{ trans('adminlte::adminlte.email') }}">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

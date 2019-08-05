@@ -2,13 +2,14 @@
 
 namespace App;
 
-use App\User;
+
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Service extends Model
 {
-    public function users()
-    {
-        return $this->belongsToMany('App\User','service_user','service_id','user_id');
+
+    public function users(){
+        return $this->belongsToMany(User::class, 'service_user', 'service_id', 'user_id');
     }
 }
